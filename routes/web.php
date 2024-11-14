@@ -27,12 +27,12 @@ Route::get('/Usuario', function () {
     return view('documentos2');
 });
 
-Route::get('/documentos3', function () {
+Route::get('/documentos_areas', function () {
     return view('documentos3');
 });
 
-Route::get('/documentos4', function () {
-    return view('documentos4');
+Route::get('/subir_datos', function () {
+    return view('subir');
 });
 
 // Rutas protegidas por Jetstream
