@@ -22,6 +22,8 @@
       <!-- Texto de título central -->
       <h2 class="text-2xl font-bold tracking-wide">CECEQ <span class="font-light italic">SGD-CECEQ</span></h2>
     </div>
+    <!-- Icono de flecha para cerrar sesión o acción -->
+    <button  class="text-2xl"><i class="fas fa-sign-out-alt"></i></button>
   </div>
 
   <div class="flex h-[calc(100vh-56px)] overflow-hidden">
@@ -40,10 +42,26 @@
           <li class="py-2">
             <p class="text-gray-700">Áreas</p>
             <ul class="pl-4 mt-2 space-y-1">
-              <li class="flex items-center text-blue-700"><i class="fas fa-circle mr-2 text-xs"></i>Area 1</li>
-              <li class="flex items-center"><i class="fas fa-circle mr-2 text-xs text-gray-500"></i>Area 2</li>
-              <li class="flex items-center"><i class="fas fa-circle mr-2 text-xs text-gray-500"></i>Area 3</li>
-              <li class="flex items-center"><i class="fas fa-circle mr-2 text-xs text-gray-500"></i>Area 4</li>
+              <li class="flex items-center">
+                <a href="{{ route('Areas.form') }}" class="text-gray-500 flex items-center">
+                  <i class="fas fa-circle mr-2 text-xs"></i> Área 1
+                </a>
+              </li>
+              <li class="flex items-center">
+                <a href="{{ route('Areas.form') }}" class="text-gray-500 flex items-center">
+                  <i class="fas fa-circle mr-2 text-xs"></i> Área 2
+                </a>
+              </li>
+              <li class="flex items-center">
+                <a href="{{ route('Areas.form') }}" class="text-gray-500 flex items-center">
+                  <i class="fas fa-circle mr-2 text-xs"></i> Área 3
+                </a>
+              </li>
+              <li class="flex items-center">
+                <a href="{{ route('Areas.form') }}" class="text-gray-500 flex items-center">
+                  <i class="fas fa-circle mr-2 text-xs"></i> Área 4
+                </a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -55,7 +73,8 @@
       <!-- Título de área y icono de filtro -->
       <div class="flex justify-between items-center mt-4 border-b border-gray-300 pb-2">
         <h2 class="text-lg font-bold text-gray-800">Inicio / Área 1</h2>
-        <button class="text-gray-700 text-xl"><i class="fas fa-filter"></i></button> <!-- Icono de filtro -->
+        <!-- Icono de filtro -->
+        <button onclick="toggleFilterModal()" class="text-gray-700 text-xl"><i class="fas fa-filter"></i></button>
       </div>
 
       <!-- Sección de Documentos -->
@@ -179,6 +198,39 @@
     </div>
   </div>
 
+  <!-- Modal de filtros -->
+  <div id="filterModal" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden">
+    <div class="bg-gray-300 rounded-lg p-6 w-96 shadow-lg">
+      <h3 class="text-xl font-bold text-gray-800 mb-4">Filtros</h3>
+      <div class="mb-4">
+        <p class="font-semibold text-gray-800">Tipos de Archivos</p>
+        <div class="flex items-center mb-2">
+          <input type="checkbox" class="mr-2">
+          <label>Tramite</label>
+        </div>
+        <div class="flex items-center mb-2">
+          <input type="checkbox" class="mr-2">
+          <label>Proceso</label>
+        </div>
+        <div class="flex items-center mb-2">
+          <input type="checkbox" class="mr-2">
+          <label>Antiguedad</label>
+        </div>
+      </div>
+      <div class="mb-4">
+        <p class="font-semibold text-gray-800">Fechas de Archivos</p>
+        <label class="block text-gray-700">Fecha de Inicio</label>
+        <input type="date" class="w-full mb-2 p-2 border rounded">
+        <label class="block text-gray-700">Fecha de Fin</label>
+        <input type="date" class="w-full p-2 border rounded">
+      </div>
+      <div class="flex justify-end">
+        <button onclick="toggleFilterModal()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">Aplicar</button>
+      </div>
+    </div>
+  </div>
+
+
   <!-- JavaScript para mostrar/ocultar modales -->
   <script>
     function toggleModal() {
@@ -201,6 +253,11 @@
       // Aquí puedes añadir la lógica para subir el documento
       console.log('Documento cargado');
       toggleUploadModal(); // Cierra el modal después de la carga
+    }
+
+    function toggleFilterModal() {
+      const modal = document.getElementById('filterModal');
+      modal.classList.toggle('hidden');
     }
   </script>
 

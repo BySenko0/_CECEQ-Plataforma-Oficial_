@@ -42,10 +42,26 @@
           <li class="py-2">
             <p class="text-gray-700">Áreas</p>
             <ul class="pl-4 mt-2 space-y-1">
-              <li class="flex items-center text-blue-700"><i class="fas fa-circle mr-2 text-xs"></i>Area 1</li>
-              <li class="flex items-center"><i class="fas fa-circle mr-2 text-xs text-gray-500"></i>Area 2</li>
-              <li class="flex items-center"><i class="fas fa-circle mr-2 text-xs text-gray-500"></i>Area 3</li>
-              <li class="flex items-center"><i class="fas fa-circle mr-2 text-xs text-gray-500"></i>Area 4</li>
+              <li class="flex items-center">
+                <a href="{{ route('Areas.form') }}" class="text-gray-500 flex items-center">
+                  <i class="fas fa-circle mr-2 text-xs"></i> Área 1
+                </a>
+              </li>
+              <li class="flex items-center">
+                <a href="{{ route('Areas.form') }}" class="text-gray-500 flex items-center">
+                  <i class="fas fa-circle mr-2 text-xs"></i> Área 2
+                </a>
+              </li>
+              <li class="flex items-center">
+                <a href="{{ route('Areas.form') }}" class="text-gray-500 flex items-center">
+                  <i class="fas fa-circle mr-2 text-xs"></i> Área 3
+                </a>
+              </li>
+              <li class="flex items-center">
+                <a href="{{ route('Areas.form') }}" class="text-gray-500 flex items-center">
+                  <i class="fas fa-circle mr-2 text-xs"></i> Área 4
+                </a>
+              </li>
             </ul>
           </li>
         </ul>

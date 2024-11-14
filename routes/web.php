@@ -1,43 +1,43 @@
-<?php
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
+    <?php
+    use Illuminate\Support\Facades\Route;
+    use App\Http\Controllers\AuthController;
 
-// Ruta GET para mostrar el formulario de login
-Route::get('/', function () {
-    return view('auth.login'); // resources/views/auth/login.blade.php
-})->name('login.form');
+    // Ruta GET para mostrar el formulario de login
+    Route::get('/', function () {
+        return view('auth.login'); // resources/views/auth/login.blade.php
+    })->name('login.form');
 
-// Ruta POST para procesar el login
-Route::post('/', [AuthController::class, 'login'])->name('login');
+    // Ruta POST para procesar el login
+    Route::post('/', [AuthController::class, 'login'])->name('login');
 
-// Ruta GET para mostrar el formulario de registro
-Route::get('/registro', function () {
-    return view('auth.register'); // resources/views/auth/register.blade.php
-})->name('registro.form');
+    // Ruta GET para mostrar el formulario de registro
+    Route::get('/registro', function () {
+        return view('auth.register'); // resources/views/auth/register.blade.php
+    })->name('registro.form');
 
-// Ruta POST para procesar el registro
-Route::post('/registro', [AuthController::class, 'register'])->name('register');
+    // Ruta POST para procesar el registro
+    Route::post('/registro', [AuthController::class, 'register'])->name('register');
 
-// Rutas adicionales
-Route::get('/Areas', function () {
-    return view('areas_admin');
-});
+    // Rutas adicionales
+    Route::get('/Areas', function () {
+        return view('areas_admin');
+    })->name('Areas.form');
 
-Route::get('/Usuario', function () {
-    return view('documentos2');
-});
+    Route::get('/Usuario', function () {
+        return view('documentos2');
+    });
 
-Route::get('/documentos_areas', function () {
-    return view('documentos3');
-});
+    Route::get('/documentos_areas', function () {
+        return view('documentos3');
+    });
 
-Route::get('/subir_datos', function () {
-    return view('subir');
-});
+    Route::get('/subir_datos', function () {
+        return view('subir');
+    });
 
-// Rutas protegidas por Jetstream
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/Index_adm', function () {
-        return view('Index_adm');
-    })->name('Index_adm');
-});
+    // Rutas protegidas por Jetstream
+    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+        Route::get('/Index_adm', function () {
+            return view('Index_adm');
+        })->name('Index_adm');
+    });
