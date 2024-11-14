@@ -1,48 +1,71 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGD-CECEQ - Login</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Flowbite CSS (necesario si usas componentes como tabs) -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@1.6.3/dist/flowbite.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <!-- Encabezado -->
+    <header class="bg-blue-800 text-white text-center p-4">
+        <div class="text-2xl font-bold">SGD-CECEQ</div>
+        <div class="text-right pr-4">
+            <img src="logo-secretaria.png" alt="Logo Secretaría" class="h-10 inline">
+        </div>
+    </header>
 
-        <x-validation-errors class="mb-4" />
-
-        @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
+    <!-- Contenedor del Formulario -->
+    <main class="flex-grow flex items-center justify-center">
+        <div class="bg-white shadow-md rounded-lg p-8 max-w-md w-full">
+            <div class="flex justify-center mb-4 space-x-4">
+                <!-- Enlace para el login (no hace nada aquí porque ya estamos en login) -->
+                <span class="text-blue-700 border-b-2 border-blue-700 px-4 py-2">Ingresar</span>
+                <!-- Enlace para la página de registro -->
+                <a href="{{ route('registro.form') }}" class="text-blue-700 px-4 py-2 hover:underline">Registrar</a>
             </div>
-        @endsession
+            <h2 class="text-center text-2xl font-bold mb-6">INGRESAR</h2>
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <!-- Campo Correo -->
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Correo</label>
+                    <input type="email" id="email" name="email" required
+                        class="mt-1 p-2 border border-gray-300 rounded-lg w-full focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <!-- Campo Contraseña -->
+                <div class="mb-6">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                    <input type="password" id="password" name="password" required
+                        class="mt-1 p-2 border border-gray-300 rounded-lg w-full focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <!-- Botón Ingresar -->
+                <button type="submit" class="w-full bg-blue-700 text-white py-2 rounded-lg hover:bg-blue-800">INGRESAR</button>
+            </form>
+        </div>
+    </main>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+    <!-- Pie de página -->
+    <footer class="bg-blue-800 text-white text-center p-4">
+        <div class="flex justify-center space-x-4 mb-4">
+            <!-- Iconos (puedes personalizarlos con los íconos que prefieras) -->
+            <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p class="text-sm">
+            Dirección: Av. Constituyentes Esq. Luis Pasteur S/N Col. Villas del Sur, C.P.76000. Santiago de Querétaro, Qro.
+            Teléfono: (442) 251 9600.
+        </p>
+        <p class="text-xs mt-2">
+            "Esta obra, programa o acción es de carácter público, no es patrocinado ni promovido por partido político alguno..."
+        </p>
+    </footer>
 
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            </div>
-
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ms-4">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout>
+    <!-- Flowbite Script -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.3/dist/flowbite.min.js"></script>
+</body>
+</html>
