@@ -33,7 +33,7 @@
             <span class="w-7 h-1 bg-white rounded"></span>
         </button>
         <!-- Información del Centro -->
-        <div class="text-white text-left pl-4  flex-1">
+        <div class="text-white text-left pl-4 flex-1">
             <p class="text-xs font-light leading-tight">Centro Educativo y Cultural del Estado</p>
             <p class="text-lg font-bold leading-tight">GÓMEZ MORIN</p>
         </div>
@@ -67,7 +67,8 @@
         <div class="text-center mb-6 border-b pb-4 border-gray-300">
             <div class="bg-gray-300 w-16 h-16 rounded-full mx-auto"></div>
             <h3 class="text-lg font-semibold mt-2 text-gray-800">MDG2309AC</h3>
-            <p class="text-gray-700">Usuario Regular</p>
+            <p class="text-gray-700">Abraham Perez Navor</p>
+            <p class="text-gray-700">Administrador</p>
         </div>
         
         <ul class="mt-4 space-y-2">
@@ -89,10 +90,28 @@
                 <span class="ml-3">Mis Documentos</span>
             </li>
 
-            <!-- Opción Compartidos -->
-            <li class="p-4 flex items-center hover:bg-purple-300 cursor-pointer">
-                <i class="fas fa-user w-6 h-6 text-gray-800 mr-3"></i>
-                <span class="ml-3">Compartidos</span>
+            <!-- Opción Areas -->
+            <li>
+                <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                    <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Areas</span>
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                    </svg>
+                </button>
+                <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                    <li>
+                        <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Área Legislativa</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Área Judicial</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Área Administrativa</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Área Fiscal</a>
+                    </li>
+                </ul>
             </li>
 
             <!-- Opción de Cerrar sesión -->

@@ -1,7 +1,7 @@
 <!-- resources/views/inicio.blade.php -->
-@extends('layouts.Navbar')
+@extends('layouts.Navbar-Admin')
 
-@section('title', 'Inicio')
+@section('title', 'Inicio-Admin')
 
 @section('content')
 <div class="p-6">

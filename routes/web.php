@@ -20,24 +20,32 @@
 
     // Rutas adicionales
     Route::get('/Areas', function () {
-        return view('areas_admin');
+        return view('admin.areas_admin');
     })->name('Areas.form');
 
     Route::get('/Usuario', function () {
-        return view('documentos2');
+        return view('user.Usuarios');
     });
 
     Route::get('/documentos_areas', function () {
-        return view('documentos3');
+        return view('admin.documentos_areas');
     });
 
     Route::get('/subir_datos', function () {
         return view('subir');
     });
 
+    Route::get('/PerfilU', function () {
+        return view('user.Perfil-User');
+    });
+
+    Route::get('/PerfilA', function () {
+        return view('admin.Perfil-admin');
+    });
+
     // Rutas protegidas por Jetstream
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('/Index_adm', function () {
-            return view('Index_adm');
+            return view('admin.Index_adm');
         })->name('Index_adm');
     });
